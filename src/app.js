@@ -1,40 +1,39 @@
-/* eslint-disable */
 import "bootstrap";
 import "./style.css";
 
+
 window.onload = function() {
-  let pronombre = ["la", "nuestra", "tu"];
-  let adjetivo = ["mejor", "nueva", "profesional"];
-  let nombre = ["ropa", "cafe", "musica"];
-  let dominio = [".com", ".net", ".es"];
-  let hackDomain = ["restaurant.es"];
+  let pronouns = ["la", "nuestra", "tu"];
+  let adjetives = ["mejor", "nueva", "profesional"];
+  let nouns = ["ropa", "cafe", "musica"];
+  let domains = [".com", ".net", ".es"];
+  let hackDomains = ["restaurant.es"];
 
   let textForOf = "";
   let textHackDomain = "";
 
-  for (const elementP of pronombre) {
-    for (const elementA of adjetivo) {
-      for (const elementN of nombre) {
-        for (const elementD of dominio) {
+  for (const pronoun of pronouns) {
+    for (const adjetive of adjetives) {
+      for (const noun of nouns) {
+        for (const domain of domains) {
           textForOf += `
-          <li class="list-group-item">
-            ${elementP}${elementA}${elementN}${elementD}
-          </li>`;
+            <li class="list-group-item">
+              ${pronoun}${adjetive}${noun}${domain}
+            </li>`;
         }
       }
     }
   }
-  for (const elementP of pronombre) {
-    for (const elementA of adjetivo) {
-      for (const elementH of hackDomain) {
+  for (const pronoun of pronouns) {
+    for (const adjetive of adjetives) {
+      for (const hackDomain of hackDomains) {
         textHackDomain += `
-        <li class="list-group-item">
-          ${elementP}${elementA}${elementH} 
-        </li>`;
+          <li class="list-group-item">
+            ${pronoun}${adjetive}${hackDomain} 
+          </li>`;
       }
     }
   }
-  document.querySelector("#dominio").innerHTML = textForOf;
-
-  document.querySelector("#h-dominio").innerHTML = textHackDomain;
+  document.querySelector("#domain").innerHTML = textForOf;
+  document.querySelector("#hack-domain").innerHTML = textHackDomain;
 };
